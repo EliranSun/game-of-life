@@ -31,3 +31,36 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  padding: 0;
+}
+
+tr {
+  height: 5px;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  border-spacing: 0;
+}
+
+.grid {
+  margin: 30px;
+}
+
+.cell {
+  border: 1px solid lightgray;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+}
+
+.cell.alive {
+  background-color: #282c34;
+}
+
+.cell.dead {
+  background-color: white;
+}
