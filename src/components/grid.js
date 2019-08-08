@@ -22,12 +22,7 @@ class Grid extends React.Component {
     this.timeInterval = null;
   }
 
-  componentDidUpdate() {
-    console.log('UPDATE!');
-  }
-
   createGrid() {
-    // TODO: map + map and not map*map
     return new Array(this.props.rows)
       .fill(undefined)
       .map(() => new Array(this.props.cols).fill(0));
@@ -42,7 +37,6 @@ class Grid extends React.Component {
   }
 
   renderGrid() {
-    // TODO: map + map and not map*map
     return (
       <table>
         <tbody>
@@ -89,14 +83,11 @@ class Grid extends React.Component {
       Any live cell with more than three live neighbours dies, as if by overpopulation.
       Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction. */
 
-    // TODO: map + map and not map*map
     const newGrid = JSON.parse(JSON.stringify(this.state.grid));
-    // debugger;
     this.state.grid.forEach((slots, rowIndex) => {
       slots.forEach((slot, columnIndex) => {
         let aliveNeighbours = 0;
         if (this.state.grid[rowIndex - 1]) {
-          // TODO: prevent invalid cell checks instead || operator
           aliveNeighbours +=
             (this.state.grid[rowIndex - 1][columnIndex - 1] || 0) +
             this.state.grid[rowIndex - 1][columnIndex] +
@@ -111,10 +102,6 @@ class Grid extends React.Component {
             this.state.grid[rowIndex + 1][columnIndex] +
             (this.state.grid[rowIndex + 1][columnIndex + 1] || 0);
         }
-
-        // if (rowIndex === 0 && columnIndex === 1) {
-        //   debugger;
-        // }
 
         if (slot === 1 && aliveNeighbours < 2) {
           // Any live cell with fewer than two live neighbours dies, as if by underpopulation.

@@ -6,7 +6,7 @@ import Grid from './components/grid';
 function App() {
   return (
     <div className="App">
-      <Grid rows={ 50 } cols={ 50 } />
+      <Grid rows={ 10 } cols={ 10 } />
     </div>
   );
 }

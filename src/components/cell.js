@@ -9,7 +9,6 @@ class Cell extends React.Component {
   }
 
   toggleStateLife() {
-    console.log('click??');
     if (!this.props.gamePaused) {
       return;
     }
